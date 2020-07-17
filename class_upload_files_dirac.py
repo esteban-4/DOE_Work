@@ -5,10 +5,6 @@ from datetime import datetime
 class add_files:
 	def list_directory(user_datetime):
 		dir_list=[]
-<<<<<<< HEAD
-=======
-		dir_list2 =[]
->>>>>>> 2f27cc9fa3257705391ab6f7c47ac97006a0e567
 		date_format= '%a %b %d %H:%M:%S %Y'
 		user_datetime = datetime.strptime(user_datetime ,'%Y-%m-%d %H:%M:%S')
 		user_datetime=user_datetime.strftime(date_format)
@@ -20,41 +16,14 @@ class add_files:
 				local_time = time.ctime(modified)
 				if  (datetime.strptime(user_datetime ,date_format)) <= (datetime.strptime(local_time, date_format)) :
 					dir_list.append('File: ' + filename + '   Path:  '  + file_path)	
-<<<<<<< HEAD
 		return  dir_list
 	def adding_file_list(dirlist):
 		lfn_dir = '/ccsdi/user/t/thom991/' 
 		se = 'PNNL-PIC-SRM-SE'
 		s = "#!/bin/bash\n"
-=======
-					dir_list2.append(file_path)
-		return dir_list2
-
-	def adding_file_list(dirlist):
-
-		lfn_dir = '/ccsdi/user/t/thom991/' 
-
-		se = 'PNNL-PIC-SRM-SE'
-
-		s = "#!/bin/bash\n"
-
->>>>>>> 2f27cc9fa3257705391ab6f7c47ac97006a0e567
 		for my_file in dirlist:
 			base_name  = os.path.basename(my_file)
 			upload_lfn = os.path.join(lfn_dir, base_name)
 			s += "dirac-dms-add-file %s %s %s\n" % (upload_lfn, base_name, se)
-<<<<<<< HEAD
 		with open("upload_script.sh", "w") as sf:
 			sf.write(s)
-x = add_files.list_directory('2020-07-16 08:30:20')		
-add_files.adding_file_list(x)	
-
-
-=======
-			print("dirac-dms-add-file %s %s %s\n" % (upload_lfn, base_name, se))
-
-		with open("upload_script.sh", "w") as sf:
-			sf.write(s)
-a = add_files.list_directory('2020-07-12 08:30:20')			
-add_files.adding_file_list(a)
->>>>>>> 2f27cc9fa3257705391ab6f7c47ac97006a0e567
