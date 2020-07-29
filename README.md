@@ -17,8 +17,8 @@
   and put in "x" for the paramter or you can put "add_files.list_directory('[datetime you choose]')" inside the parameter
   
  4)To upload the files to DIRAC, once you are connected to DIRAC you run the follwoing lines:
-    python class_upload_files_dirac.py
-    chmod a+x upload_script.sh
+    python class_upload_files_dirac.py,
+    chmod a+x upload_script.sh,
     . upload_script.sh
   
   
